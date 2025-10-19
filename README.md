@@ -1,66 +1,83 @@
-# RentCar #
-“RentCar” is a web application for a car rental buisnesses. The client side is a single page app built with ReactJS and Bootstrap. The server side is built on Spring Boot using Java. The application uses MySQL database to store data. Security is provided by using JSON web tokens. The application uses Users, Rents, Sales and Cars as basic entities. Each user can register, login and logout. The application supports two user roles - User and Admin.
+# Vehicle Rental System
 
-## Functionality
-### Anonymous users
-  - Can login, register, access the entire car fleet and the details for each car.
-### User Login
-  - Login in using username and password of already registered user. Usernames are unique identifier.
-### User Register
-  - Register a new user by providing email, password and username. 
-### User Logout
-  - Logouts from the application. 
-### Car fleet
-  - List all cars. Five per page.  
-  - Search car by brand or model.
-  - Anonymous and Users can access details for each car
-  - Admins can access the edit and delete functionalities as well as details
-### Car Details
-  - Shows car details
-  - Anonymous, users and admins can see all relevant information about the car
-  - Users can check, if the car is available for rent for specified dates.
-  - Admins can access edit and delete functionalities
-### Available cars
-  - User functionality
-  - Search for all cars which are available within specified dates.
-  - Users can access reserve and details functionality from that screen
-### Reserve car
-  - User only functionality
-  - Shows details of specified car as well as information about the specified dates and the total price of the rent
-  - User can confirm the reservation or go back to Car fleet.
-  - Successful reservation creates a rent awaiting approval from Admin
-### My Purchases
-  - List all purchases of user.
-  - Search by rentId, car brand and car model.
-### Pending rents
-  - Admin only functionality
-  - List of all rents waiting approval. Admin can approve or decline the rent.
-  - After approval a sale is created.
-  - After decline a sale with status DECLINED is created.
-### Active rents
-  - Admin only functionality
-  - List of all active rents.
-  - Admin can finish rent with specified a date.
-  - If specified date is after the date of return of the rent, penalty sale is generated.
-### Add car
-  - Admin only functionality.
-  - Form for car creation. All fields required.
-  - After successful submit, a car is added to the database.
-### Edit car
-  - Admin only functionality.
-  - Form for car edit. All fields required.
-  - After successful submit, some or all of the car properties are modified.
-### Delete car
-  - Admin only functionality.
-  - If the car still has active rents, delete is not possible and error is displayed.
-  - After successful submit, the car is removed from the database along with all rents related to her.
-  
-### Used Tools
-```
-- Front end
-  - ReactJS
-  - Bootstrap
-- Back end
-  - Spring boot with Java
-  - MySQL
-```
+This is a full-stack web application for managing vehicle rentals. Users can browse available cars, rent them for specific periods, and administrators can manage the car inventory and rentals.
+
+## Tech Stack
+
+### Backend
+
+*   **Java 17**
+*   **Spring Boot** (v2.1.3.RELEASE)
+*   **Spring Data JPA**: For object-relational mapping and data access.
+*   **Spring Security**: For authentication and authorization.
+*   **JWT (JSON Web Tokens)**: For securing the API.
+*   **MySQL**: Relational database for data storage.
+*   **Maven**: Dependency management.
+*   **ModelMapper**: For object mapping.
+
+### Frontend
+
+*   **React** (v16.8.3)
+*   **React Router** (v4.3.1): For client-side routing.
+*   **Bootstrap** (v4.3.1): For UI components and styling.
+*   **JavaScript (ES6+)**
+*   **HTML5 & CSS3**
+
+## Features
+
+*   **User Authentication**: Secure user registration and login.
+*   **Car Catalog**: Browse and view details of available cars.
+*   **Rental System**: Rent a car for a specified period.
+*   **User Dashboard**: View personal rental history.
+*   **Admin Panel**:
+    *   Manage car inventory (Create, Edit, Delete).
+    *   View and manage all user rentals.
+
+## Setup and Installation
+
+### Prerequisites
+
+*   Java 17 or higher
+*   Maven
+*   Node.js and npm
+*   MySQL
+
+### Backend
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/your-username/Vehicle-Rental-System.git
+    cd Vehicle-Rental-System/back-end
+    ```
+2.  **Configure the database:**
+    *   Open `src/main/resources/application.properties`.
+    *   Update the `spring.datasource.url`, `spring.datasource.username`, and `spring.datasource.password` properties to match your MySQL configuration.
+3.  **Run the application:**
+    ```bash
+    mvn spring-boot:run
+    ```
+    The backend server will start on `http://localhost:8080`.
+
+### Frontend
+
+1.  **Navigate to the frontend directory:**
+    ```bash
+    cd ../front-end
+    ```
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+3.  **Start the development server:**
+    ```bash
+    npm start
+    ```
+    The frontend application will be accessible at `http://localhost:3000`.
+
+## Usage
+
+1.  Register a new user account or log in with an existing one.
+2.  Browse the available cars on the home page.
+3.  Select a car to view its details and rental options.
+4.  Choose your desired rental dates and confirm the rental.
+5.  Admins can access the admin panel to manage cars and rentals.
