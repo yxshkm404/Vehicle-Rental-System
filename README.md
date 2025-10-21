@@ -72,7 +72,7 @@ This is a full-stack web application for managing vehicle rentals. Users can bro
     ```bash
     npm start
     ```
-    The frontend application will be accessible at `http://localhost:3000`.
+    The frontend application will be accessible at `http://localhost:3000` .
 
 ## Usage
 
@@ -80,4 +80,4 @@ This is a full-stack web application for managing vehicle rentals. Users can bro
 2.  Browse the available cars on the home page.
 3.  Select a car to view its details and rental options.
 4.  Choose your desired rental dates and confirm the rental.
-5.  Admins can access the admin panel to manage cars and rentals.
+5.  Admins can access the admin panel to manage cars and rentals
